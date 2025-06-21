@@ -3,9 +3,9 @@
   <h2 class="section-title">Your Upcoming Events</h2>
 
   {% if events %}
-    <ul class="events-grid">
+    <div class="events-grid">
       {% for e in events %}
-        <li class="event-card">
+        <div class="event-card">
           <div class="event-info">
             <h3>{{ e.title }}</h3>
             <p class="desc">{{ e.description }}</p>
@@ -17,12 +17,12 @@
           <div class="actions">
             <a class="btn" href="{{ url_for('edit_event', event_id=e.id) }}">Edit</a>
             <form action="{{ url_for('delete_event', event_id=e.id) }}" method="post">
-              <button class="btn btn-danger">Delete</button>
+              <button class="btn-danger">Delete</button>
             </form>
           </div>
-        </li>
+        </div>
       {% endfor %}
-    </ul>
+    </div>
   {% else %}
     <p class="empty">
       No events yet. 
